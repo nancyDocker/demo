@@ -1,4 +1,4 @@
-# FROM iwsaas/centos
+FROM iwsaas/centos
 MAINTAINER Nancy Shi <nancy_shi@gmail.com>
 ENV VERSION 1.0
 
