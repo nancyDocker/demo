@@ -9,6 +9,7 @@ RUN yum install ntp -y
 EXPOSE 21
 
 ADD vsftpd.conf /etc/vsftpd/vsftpd.conf
-RUN chmod 600 /etc/vsftpf/vsftpd.conf
+WORKDIR /etc/vsftpd/
+RUN chmod 600 vsftpd.conf
 
 CMD service vsftpd start && tail -f /var/log/nancy.out
