@@ -12,4 +12,4 @@ ADD vsftpd.conf /etc/vsftpd/vsftpd.conf
 WORKDIR /etc/vsftpd/
 RUN chmod 600 vsftpd.conf
 
-CMD service vsftpd start && tail -f /var/log/nancy.out
+#CMD service vsftpd start && tail -f /var/log/nancy.out
