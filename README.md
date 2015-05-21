@@ -1,5 +1,2 @@
 # demo
-# install ftp
-# replace the file
-# start server
-# 
+# ftp service
