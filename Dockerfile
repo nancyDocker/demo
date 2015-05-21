@@ -1,15 +1,16 @@
 FROM iwsaas/centos
 MAINTAINER Nancy Shi <jshiyuezhen@gmail.com>
 ENV VERSION 1.0
-ENTRYPOINT ["echo", "Welcome to use this image!"]
 
-RUN yum install vsftpd -y
-RUN yum install ntp -y
+RUN yum install vsftpd ntp passwd -y
 
 EXPOSE 21
 
-ADD vsftpd.conf /etc/vsftpd/vsftpd.conf
 WORKDIR /etc/vsftpd/
+ADD vsftpd.conf /etc/vsftpd/vsftpd.conf
+ADD vsftpd.sh /etc/vsftpd/vsftpd.sh
+RUN chmod -v +x /etc/vsftpd/vsftpd.sh
 RUN chmod 600 vsftpd.conf
+RUN echo "Hello World"
 
-#CMD service vsftpd start && tail -f /var/log/nancy.out
+CMD /etc/vsftpd/vsftpd.sh
